@@ -22,7 +22,10 @@ for n in range(2, 40, 2):
     U0.append(data[np.abs(data[:,0]) < 1e-8 ,1][0])
     plt.figure(figsize=(10,8))
     plt.grid()
-    plt.plot(data[:,0], data[:,1])
+    plt.xlabel('x')
+    plt.ylabel('u(x)')
+    plt.plot(data[:,0], data[:,1], label = f'u(n={n},x)')
+    plt.legend()
     plt.savefig(f'graphs/u{n}.png')
     plt.close()
 
